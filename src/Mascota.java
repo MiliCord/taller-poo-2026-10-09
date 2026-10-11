@@ -1,22 +1,28 @@
 public class Mascota {
     private String nombre;
-    private String raza;
+    private String especie;
     private double peso;
     private int edad;
+    private int valor;
 
     Mascota(String nombre, String raza, double peso, int edad) {
         this.nombre = nombre;
-        this.raza = raza;
+        this.especie = especie;
         this.peso = peso;
         this.edad = edad;
+        this.valor = valor;
+    }
+
+    public int getValor() {
+        return valor;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getRaza() {
-        return raza;
+    public String getEspecie() {
+        return especie;
     }
 
     public double getPeso() {
@@ -44,11 +50,32 @@ public class Mascota {
         this.edad =nuevoEdad;
     }
 
+    public int valorConsulta() {
 
+        int valor = 35000;
+        if (getPeso() > 25) {
+            valor = 55000;
+        } else if (getPeso() > 10) {
+            valor = 45000;
 
+        }
 
+        if (getEdad() >= 8){
 
-
-
+            valor = valor + 12000;
+        }
+        return valor;
     }
-}
+    }
+
+
+
+
+
+
+
+
+
+
+
+
